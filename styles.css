@@ -1,0 +1,300 @@
+/* global config */
+@font-face {
+    font-family: MsMadi;
+    src: url(assets/MsMadi-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #390661;
+    color: white;
+    font-family: 'MsMadi';
+    font-size: 3vw;
+}
+
+.logo {
+    width: 5em;
+    background-image: url(assets/logo.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    margin-left: 15px;
+    padding-left: 50px;
+    display: table-cell;
+    transition: all .2s ease-in-out;
+}
+
+nav {
+    margin-left: -15px;
+    vertical-align: middle;
+    width: 99%;
+}
+
+nav ul {
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 5%;
+}
+
+nav ul li {
+    font-weight: 550;
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 11px;
+    padding-right: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.logo:hover, nav ul li:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  color: #B55AFA;
+}
+
+nav ul li.selected {
+    font-weight: 600;
+    color: #B55AFA;
+    background-color: rgba(73, 42, 97, .5);
+    border-radius: 20px;
+}
+
+.content {
+    height: 100%;
+    width: 80%;
+    text-align: justify;
+    margin: auto;
+}
+
+h1, h2, h3 h4, h5, h6, p {
+    color:#492A61;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+h1.main-title {
+    margin-left: 50px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #492A61;
+    color: white;
+}
+
+
+/* Home */
+.hero {
+    width: 100%;
+    height: 500px;
+    background-image: url(assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    line-height: 450px;
+    text-align: center;
+}
+
+.hero h1 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 4.25vw;
+    color:#492A61 !important;
+    text-shadow: 0 0 7px #850DE0, 0 0 10px #850DE0, 0 0 21px #fff,
+      0 0 42px #B55AFA, 0 0 82px #B55AFA, 0 0 92px #B55AFA, 0 0 102px #B55AFA,
+      0 0 151px #B55AFA !important;
+}
+
+
+/* Royal family */
+.family {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+.family div div {
+    width: 240px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.family div div:hover {
+    opacity: 0.7;
+}
+
+.family div span {
+    text-align: center;
+    width: 240px;
+}
+
+.family div span h3 {
+    display: inline-block;
+}
+
+.king {
+    background-image: url("assets/roi_absent.jpg");
+}
+.queen {
+    background-image: url("assets/Idyia.jpg");
+}
+.child1 {
+    background-image: url("assets/Médée.jpg");
+}
+.child2 {
+    background-image: url("assets/Chalciopé.jpg");
+}
+.child3 {
+    background-image: url("assets/Apsyrtos.jpg");
+}
+
+
+/* royal assets */
+table {
+    width: 90%;
+    margin: 40px;
+  }
+  table thead tr {
+    background-color: #492A61;
+  }
+  table tbody tr {
+    background-color: #492A61;
+  }
+  .odd {
+    background-color: #390661 !important;
+  }
+  table tr,
+  table tr th,
+  table tr td {
+    padding-left: 10px;
+    border: solid 1px;
+    height: 25px;
+    color: white;
+  }
+
+
+/* contact us */
+  .formelement {
+    display: flex;
+    margin: 0.5rem;
+    width: 80%;
+  }
+  label {
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .submit {
+    width: 100%;
+    padding: 20px;
+  }
+  .submit button {
+    margin-left: 90%;
+    height: 30px;
+    width: 50px;
+    font-size: 1.03em;
+  }
+  
+
+/* début css modal de https://www.w3schools.com/howto/howto_css_modal_images.asp */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content,
+  #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+  /* fin css modal */

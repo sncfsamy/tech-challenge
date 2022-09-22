@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name=”keywords” content=”samy, best, site, eu” />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="text/javascript" src="script.js"></script>
+        <title>Tech'Challenge Samy</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <li
+                    data-target="index.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Home</li>
+                    <li
+                    data-target="royal-family.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Royal Family</li>
+                    <li
+                    data-target="royal-assets.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Royal Assets</li>
+                    <li class="selected"
+                    data-target="contact-us.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Contact Us</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="content"><div class="contact-us">
+                <h1>Contact us</h1>
+                <p>
+                  Fill in the form below to contact the Royal Kingdom
+                </p>
+                <form name="contactus">
+                  <div class="formelement">
+                    <label for="name">Name:</label
+                    ><input
+                      type="text"
+                      id="name"
+                      name="name"
+                      size="30"
+                      placeholder="Jason"
+                    />
+                  </div>
+                  <div class="formelement">
+                    <label for="mail">Mail:</label
+                    ><input
+                      type="text"
+                      id="mail"
+                      name="mail"
+                      size="30"
+                      placeholder="jason@argonauts.or"
+                    />
+                  </div>
+                  <div class="formelement">
+                    <label for="message">Message:</label
+                    ><textarea
+                      id="message"
+                      name="message"
+                      rows="8"
+                      cols="500"
+                      placeholder="Your message here..."
+                    ></textarea>
+                  </div>
+                  <div class="submit">
+                    <button onclick="return false;">Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </main>
+        <footer>
+            <div>
+              Copyright © Jason and the Argonauts 2022
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name=”keywords” content=”samy, best, site, eu” />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="text/javascript" src="script.js"></script>
+        <title>Tech'Challenge Samy</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <li
+                    data-target="index.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Home</li>
+                    <li class="selected"
+                    data-target="royal-family.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Royal Family</li>
+                    <li
+                    data-target="royal-assets.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Royal Assets</li>
+                    <li
+                    data-target="contact-us.html"
+                    onclick="window.location.href = this.dataset.target;">
+                    Contact Us</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1 class="main-title">The royal family</h1>
+            <div class="family">
+                <div>
+                    <div class="king portrait"></div>
+                    <span><h3>King Aeetes</h3><br />(missing during the photo)</span>
+                </div>
+                <div>
+                    <div class="queen portrait"></div>
+                    <span><h3>Queen Idyia</h3></span>
+                </div>
+                <div>
+                    <div class="child1 portrait"></div>
+                    <span><h3>Princess Madeas</h3></span>
+                </div>
+                <div>
+                    <div class="child2 portrait"></div>
+                    <span><h3>Princess Iophossa</h3></span>
+                </div>
+                <div>
+                    <div class="child3 portrait"></div>
+                    <span><h3>Prince Absyrte</h3></span>
+                </div>
+            </div>
+            <!-- Début Modal pour image de W3C -->
+            <div id="myModal" class="modal">
+              <!-- The Close Button -->
+              <span class="close">&times;</span>
+      
+              <!-- Modal Content (The Image) -->
+              <img
+                class="modal-content"
+                id="img01"
+                src="assets/Apsyrtos.jpg"
+                alt="Prince Apsyrtos"
+              />
+      
+              <!-- Modal Caption (Image Text) -->
+              <div id="caption"></div>
+            </div>
+            <!-- Fin Modal pour image de W3C -->
+        </main>
+        <footer>
+            <div>
+              Copyright © Jason and the Argonauts 2022
+            </div>
+        </footer>
+    </body>
+</html>
