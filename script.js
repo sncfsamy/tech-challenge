@@ -1,3 +1,12 @@
+/* responsive menu */
+function openNav() {
+    document.querySelectorAll('header nav')[0].style.width = "30vw";
+}
+
+function closeNav() {
+    document.querySelectorAll('header nav')[0].style.width = "0";
+}
+/*                 */
 
 window.addEventListener("DOMContentLoaded", (event) => {
     document
@@ -48,7 +57,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
     );
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("modalclose")[0];
     if (span !== undefined) {
     // When the user clicks on <span> (x), close the modal
     span.addEventListener("click", function () {
@@ -67,4 +76,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         this.style.height = 0;
         this.style.height = (this.scrollHeight) + "px";
     }
+
+
 });

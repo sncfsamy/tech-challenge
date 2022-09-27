@@ -7,19 +7,25 @@
 body {
     margin: 0;
     padding: 0;
+    border: 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-content: stretch;
+    --primary-color: #390661;
+    --secondary-color: #492A61;
+    --third-color: #B55AFA;
+    --background-color: white;
+    --transparent-primary-color: rgba(73, 42, 97, .5);
 }
 
 header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    background-color: #390661;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--background-color);
     font-family: 'MsMadi';
     font-size: 3vw;
 }
@@ -43,35 +49,36 @@ nav {
 }
 
 nav ul {
-    display: table;
-    table-layout: fixed;
     border-collapse: separate;
     border-spacing: 5%;
 }
 
-nav ul li {
+nav ul li, div.responsive span {
     font-weight: 550;
-    display: table-cell;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding-left: 11px;
+    padding-left: 10px;
     padding-right: 15px;
     transition: all .2s ease-in-out;
 }
 
-.logo:hover, nav ul li:hover {
+div p strong {
+    text-decoration: underline;
+}
+
+.logo:hover, nav ul li:hover, div.responsive span:hover {
   cursor: pointer;
   transform: scale(1.2);
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
-  color: #B55AFA;
+  color: var(--third-color);
 }
 
 nav ul li.selected {
     font-weight: 600;
-    color: #B55AFA;
-    background-color: rgba(73, 42, 97, .5);
+    color: var(--third-color);
+    background-color: var(--transparent-primary-color);
     border-radius: 20px;
 }
 
@@ -83,7 +90,7 @@ nav ul li.selected {
 }
 
 h1, h2, h3 h4, h5, h6, p {
-    color:#492A61;
+    color:var(--secondary-color);
 }
 
 main {
@@ -100,8 +107,8 @@ footer {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background-color: #492A61;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
 }
 
 
@@ -121,7 +128,7 @@ footer {
     display: inline-block;
     vertical-align: middle;
     font-size: 4.25vw;
-    color:#492A61 !important;
+    color:var(--secondary-color) !important;
     text-shadow: 0 0 7px #850DE0, 0 0 10px #850DE0, 0 0 21px #fff,
       0 0 42px #B55AFA, 0 0 82px #B55AFA, 0 0 92px #B55AFA, 0 0 102px #B55AFA,
       0 0 151px #B55AFA !important;
@@ -179,13 +186,13 @@ table {
     margin: 40px;
   }
   table thead tr {
-    background-color: #492A61;
+    background-color: var(--secondary-color);
   }
   table tbody tr {
-    background-color: #492A61;
+    background-color: var(--secondary-color);
   }
   .odd {
-    background-color: #390661 !important;
+    background-color: var(--primary-color) !important;
   }
   table tr,
   table tr th,
@@ -193,7 +200,7 @@ table {
     padding-left: 10px;
     border: solid 1px;
     height: 25px;
-    color: white;
+    color: var(--background-color);
   }
 
 
@@ -219,6 +226,73 @@ table {
     font-size: 1.03em;
   }
   
+
+/* responsive */
+.responsive {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  header {
+    height: 10vh;
+    line-height: 100%;
+    z-index: 2;
+  }
+  .logo {
+    width: 15vw;
+  }
+  nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  nav ul {
+    margin: 0;
+    padding-left: 10px;
+  }
+  nav ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    left: 15vw;
+    top: 25px;
+    font-size: 36px;
+  }
+  .responsive {
+    display: initial;
+  }
+  div.responsive {
+    display: inline-block;
+    height: 100%;
+    width: 20vw;
+    font-size: 2em;
+  }
+  div.responsive span {
+    position: relative;
+    top: 40%;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  nav ul {
+    display: table;
+    table-layout: fixed;
+  }
+  nav ul li {
+    display: table-cell;
+  }
+}
+
+/*      */
 
 /* début css modal de https://www.w3schools.com/howto/howto_css_modal_images.asp */
 /* The Modal (background) */
@@ -273,10 +347,13 @@ table {
   }
   
   /* The Close Button */
-  .close {
+  .modalclose {
     position: absolute;
     top: 15px;
     right: 35px;
+  }
+  .close {
+    text-decoration: none;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
